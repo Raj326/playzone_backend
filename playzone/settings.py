@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Secret Key para fins de teste
 SECRET_KEY = 'django-insecure-dp6th%72#r26kt^p5@s$$v)erm=kb=xd53#s+o=2w(njy78u7l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -26,12 +26,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "users.apps.UsersConfig",
     'sports_centers',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'corsheaders',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
